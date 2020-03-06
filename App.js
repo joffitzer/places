@@ -1,13 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import FetchLocation from './components/FetchLocation'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text>No way!</Text>
-    </View>
-  );
+export default class App extends React.Component {
+  getUserLocationHandler = () => {
+    console.log('Pressed the button')
+  }
+  render(){
+    return (
+      <View style={styles.container}>
+        <FetchLocation onGetLocation={this.getUserLocationHandler} />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
